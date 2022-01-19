@@ -13,7 +13,7 @@
         android:layout_height="200dp"
         android:background="@drawable/dialog_background"
         android:orientation="vertical"
-        android:id="@+id/dialog_simpletime">
+        android:id="@+id/dialog_addtime">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,35 +22,128 @@
 
             <TextView
                 android:id="@+id/dialog_title1"
-                android:layout_width="297dp"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:text="시간 기록"
+                android:fontFamily="@font/robotobold"
                 android:textColor="#202020"
                 android:textSize="15sp" />
 
-            <ImageButton
-                android:id="@+id/imgbtn_plus"
+            <Button
+                android:id="@+id/btn_done"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:background="@color/white"
-                app:tint="#000000"
-                app:srcCompat="@android:drawable/ic_input_add"
-                android:contentDescription="plus_button"/>
+                android:background="#FFFFFF"
+                android:text="완료"
+                android:fontFamily="@font/robotobold"
+                android:textSize="10sp" />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnsimple"
-            android:layout_width="150dp"
-            android:layout_height="48dp"
-            android:layout_margin="5dp"
-            android:textSize="14sp"
-            android:text="외출준비"
-            android:background="@drawable/dialog_button"
-            android:textColor="@color/white"
-            />
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="제목"
+                android:layout_gravity="center"
+                android:fontFamily="@font/robotobold"
+                android:textColor="#202020"
+                android:textSize="8sp" />
+
+            <Button
+                android:id="@+id/textcolor"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:background="#FFFFFF"
+                android:text="color"
+                android:fontFamily="@font/robotobold"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text=""
+                android:fontFamily="@font/robotobold"
+                android:textColor="#202020"
+                android:textSize="15sp"
+                android:hint=""/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.widget.Button
+                    android:id="@+id/button5"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/red"
+                    android:hint=""/>
+                <android.widget.Button
+                    android:id="@+id/button3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/yellow"
+                    android:hint=""/>
+
+                <android.widget.Button
+                    android:id="@+id/button4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/pink"
+                    android:hint=""/>
+                <android.widget.Button
+                    android:id="@+id/button2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/blue"
+                    android:hint=""/>
+                <android.widget.Button
+                    android:id="@+id/button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/black"
+                    android:hint=""
+                    />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
