@@ -1,6 +1,7 @@
 package com.example.daytracker30;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -21,34 +22,51 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    int start_time;
-    int end_time;
-
-    private Button t61;
-
-
-    //LinearLayout btnll; //버튼들어갈 레이아웃
-    //TextView tv; //시간
-
-    //private ListView list; //30분단위 리스트뷰
-    //int list_count;       //반복문을 위한 변수
-    //private Button colorbtn;
+    Button btnsimple;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        t61 = findViewById(R.id.t61);
+
+        btnsimple = (Button)findViewById(R.id.btnsimple);
+        btnsimple.setOnClickListener(btnListener);
+        //btnTime = new Button[36];
+        /*int [] btnId = { R.id.t61, R.id.t62, R.id.t71, R.id.t72, R.id.t81, R.id.t82,
+                R.id.t91, R.id.t92, R.id.t101, R.id.t102, R.id.t111, R.id.t121,
+                R.id.t122,
+                R.id.t011, R.id.t012, R.id.t021, R.id.t022, R.id.t31, R.id.t32,
+                R.id.t41, R.id.t42, R.id.t51, R.id.t52, R.id.t611, R.id.t621,
+                R.id.t711, R.id.t721, R.id.t811, R.id.t821, R.id.t911, R.id.t921,
+                R.id.t1011, R.id.t1021, R.id.t1111, R.id.t1121};
+
+        for(int i=0;i<36;i++)
+        {
+            btnTime[i] = (Button)findViewById(btnId[i]);
+        }
+        for(int i=0;i<36;i++)
+        {
+            btnTime[i].setOnClickListener(btnListener);
+        }*/
+
+        /*t61 = findViewById(R.id.t61);
         t61.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 showcustomDialog();
             }
-        });
+        });*/
 
     }
+    private View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            showcustomDialog();
+        }
+    };
 
     private void showcustomDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this
@@ -68,11 +86,14 @@ public class MainActivity extends AppCompatActivity {
         ((Button)view.findViewById(R.id.btnsimple)).setText("    외출준비    ");
 
         AlertDialog alertDialog = builder.create();
+
+        //Button = (Button) v.
+
         view.findViewById(R.id.btnsimple).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                t61.setBackgroundResource(R.drawable.dialog_button);
-                t61.setText("외출 준비");
+                btnsimple.setBackgroundResource(R.drawable.dialog_button);
+                btnsimple.setText("외출 준비");
                 alertDialog.dismiss();
             }
         });
