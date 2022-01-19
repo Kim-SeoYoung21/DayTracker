@@ -3,40 +3,47 @@ package com.example.daytracker30;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    int start_time=7;
-    int end_time=23;
+    int start_time;
+    int end_time;
 
-    Button timebtn; //30분단위 버튼
-    LinearLayout btnll; //버튼들어갈 레이아웃
-    TextView tv; //시간
+    private Button t61;
 
-    Button changetracker;
+
+    //LinearLayout btnll; //버튼들어갈 레이아웃
+    //TextView tv; //시간
+
+    //private ListView list; //30분단위 리스트뷰
+    //int list_count;       //반복문을 위한 변수
+    //private Button colorbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnll = new LinearLayout(this);
-        tv = new TextView(this);
-        timebtn = new Button(this);
-
-
-        findViewById(R.id.timebtn).setOnClickListener(new View.OnClickListener() {
+        t61 = findViewById(R.id.t61);
+        t61.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 showcustomDialog();
             }
         });
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         //순서대로
         //시간기록
         //반복문 안에 기본 버튼들
+
         builder.setView(view);
         ((TextView)view.findViewById(R.id.dialog_title1)).setText("시간 기록");
         ((Button)view.findViewById(R.id.btnsimple)).setText("    외출준비    ");
@@ -63,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
         view.findViewById(R.id.btnsimple).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                t61.setBackgroundResource(R.drawable.dialog_button);
+                t61.setText("외출 준비");
                 alertDialog.dismiss();
             }
         });

@@ -31,19 +31,20 @@
 
             <ImageButton
                 android:id="@+id/imgbtn_plus"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:background="@color/white"
                 app:tint="#000000"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@android:drawable/ic_input_add"
+                android:contentDescription="plus_button"/>
 
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnsimple"
             android:layout_width="150dp"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_margin="5dp"
             android:textSize="14sp"
             android:text="외출준비"
